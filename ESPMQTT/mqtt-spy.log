@@ -1,0 +1,939 @@
+2020-03-20 20:06:55,960 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Default configuration file present (C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml) = true
+2020-03-20 20:06:55,969 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Loading configuration file from C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml
+2020-03-20 20:07:00,590 ERROR [JavaFX Application Thread     ] [ControlPanelController        ]  - Cannot retrieve version info
+pl.baczkowicz.spy.exceptions.XMLException: Cannot unmarshal the XML
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromString(XMLParser.java:285)
+	at pl.baczkowicz.spy.ui.versions.VersionManager.loadVersions(VersionManager.java:98)
+	at pl.baczkowicz.spy.ui.controllers.ControlPanelController$2.run(ControlPanelController.java:203)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: javax.xml.bind.UnmarshalException
+ - with linked exception:
+[org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.]
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.createUnmarshalException(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.createUnmarshalException(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(Unknown Source)
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Unknown Source)
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Unknown Source)
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromString(XMLParser.java:277)
+	... 3 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	... 8 more
+2020-03-20 20:07:03,050 INFO  [JavaFX Application Thread     ] [MqttConfigurationUtils        ]  - Auto-complete for server URI (192.168.1.70 -> tcp://192.168.1.70)
+2020-03-20 20:07:03,370 ERROR [JavaFX Application Thread     ] [FileUtils                     ]  - No files in C:\Users\alexm\mqtt-spy\
+2020-03-20 20:07:03,926 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-03-20 20:07:03,938 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-03-20 20:07:03,943 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-03-20 20:07:15,073 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to #
+2020-03-20 20:07:15,074 INFO  [JavaFX Application Thread     ] [MqttSubscriptionViewManager   ]  - Creating subscription for #
+2020-03-20 20:07:15,139 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to #
+2020-03-20 20:07:37,801 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to \
+2020-03-20 20:07:37,801 INFO  [JavaFX Application Thread     ] [MqttSubscriptionViewManager   ]  - Creating subscription for \
+2020-03-20 20:07:37,844 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to \
+2020-03-20 20:07:59,633 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Successfully unsubscribed from \
+2020-03-20 20:08:02,720 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Successfully unsubscribed from #
+2020-03-20 20:08:02,720 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Subscription # removed
+2020-03-20 20:08:04,680 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Subscription \ removed
+2020-03-20 20:09:41,072 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to \
+2020-03-20 20:09:41,072 INFO  [JavaFX Application Thread     ] [MqttSubscriptionViewManager   ]  - Creating subscription for \
+2020-03-20 20:09:41,124 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to \
+2020-03-20 20:09:52,122 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Successfully unsubscribed from \
+2020-03-20 20:09:52,122 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Subscription \ removed
+2020-03-20 20:09:57,452 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to #
+2020-03-20 20:09:57,452 INFO  [JavaFX Application Thread     ] [MqttSubscriptionViewManager   ]  - Creating subscription for #
+2020-03-20 20:09:57,497 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to #
+2020-03-20 20:10:08,939 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "dfg". Payload size = "0"
+2020-03-20 20:10:18,276 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Successfully unsubscribed from #
+2020-03-20 20:10:18,276 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Subscription # removed
+2020-03-20 20:11:23,518 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting alex from [tcp://192.168.1.70]
+2020-03-20 20:11:23,521 INFO  [MQTT Disc: alex               ] [MqttDisconnectionResultHandler]  - OrangePI disconnected
+2020-03-20 20:11:26,132 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-03-20 20:11:26,135 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-03-20 20:11:26,136 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-03-20 20:11:30,392 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to #
+2020-03-20 20:11:30,392 INFO  [JavaFX Application Thread     ] [MqttSubscriptionViewManager   ]  - Creating subscription for #
+2020-03-20 20:11:30,439 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to #
+2020-03-20 20:13:04,578 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to #
+2020-03-20 20:13:11,364 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to \
+2020-03-20 20:13:11,364 INFO  [JavaFX Application Thread     ] [MqttSubscriptionViewManager   ]  - Creating subscription for \
+2020-03-20 20:13:11,412 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to \
+2020-03-20 20:13:29,428 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Successfully unsubscribed from \
+2020-03-20 20:13:31,444 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Subscription \ removed
+2020-03-20 21:59:45,317 ERROR [MQTT Ping: alex               ] [MqttCallbackHandler           ]  - Connection OrangePI lost
+Timed out while waiting to write messages to the server (32002)
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:31)
+	at org.eclipse.paho.client.mqttv3.internal.ClientState.checkForActivity(ClientState.java:672)
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.checkForActivity(ClientComms.java:732)
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.checkForActivity(ClientComms.java:718)
+	at org.eclipse.paho.client.mqttv3.TimerPingSender$PingTask.run(TimerPingSender.java:77)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+2020-03-20 21:59:45,321 WARN  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Client not connected
+2020-03-20 21:59:45,321 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Successfully unsubscribed from #
+2020-03-23 19:16:19,777 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-03-23 19:16:19,784 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-03-23 19:16:19,786 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-03-23 19:56:35,298 INFO  [JavaFX Application Thread     ] [EditConnectionsController     ]  - Selecting first item...
+2020-03-23 20:02:20,285 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting alex from [tcp://192.168.1.70]
+2020-03-23 20:02:20,288 INFO  [MQTT Disc: alex               ] [MqttDisconnectionResultHandler]  - OrangePI disconnected
+2020-03-23 20:02:22,683 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-03-23 20:02:22,686 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-03-23 20:02:22,688 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-03-23 21:21:55,878 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting alex from [tcp://192.168.1.70]
+2020-03-23 21:21:55,881 INFO  [MQTT Disc: alex               ] [MqttDisconnectionResultHandler]  - OrangePI disconnected
+2020-03-23 21:22:22,358 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Default configuration file present (C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml) = true
+2020-03-23 21:22:22,372 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Loading configuration file from C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml
+2020-03-23 21:22:25,268 INFO  [JavaFX Application Thread     ] [MqttConfigurationUtils        ]  - Auto-complete for server URI (192.168.1.70 -> tcp://192.168.1.70)
+2020-03-23 21:22:25,569 ERROR [JavaFX Application Thread     ] [FileUtils                     ]  - No files in C:\Users\alexm\mqtt-spy\
+2020-03-23 21:22:26,123 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-03-23 21:22:26,165 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-03-23 21:22:26,166 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-03-23 21:22:27,166 ERROR [JavaFX Application Thread     ] [ControlPanelController        ]  - Cannot retrieve version info
+pl.baczkowicz.spy.exceptions.XMLException: Cannot unmarshal the XML
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromString(XMLParser.java:285)
+	at pl.baczkowicz.spy.ui.versions.VersionManager.loadVersions(VersionManager.java:98)
+	at pl.baczkowicz.spy.ui.controllers.ControlPanelController$2.run(ControlPanelController.java:203)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: javax.xml.bind.UnmarshalException
+ - with linked exception:
+[org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.]
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.createUnmarshalException(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.createUnmarshalException(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(Unknown Source)
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Unknown Source)
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Unknown Source)
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromString(XMLParser.java:277)
+	... 3 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	... 8 more
+2020-03-23 21:22:33,888 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to #
+2020-03-23 21:22:33,888 INFO  [JavaFX Application Thread     ] [MqttSubscriptionViewManager   ]  - Creating subscription for #
+2020-03-23 21:22:33,998 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to #
+2020-03-23 22:04:11,152 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "45". Payload size = "1"
+2020-03-23 22:04:14,029 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "45". Payload size = "1"
+2020-03-23 22:04:57,225 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "45". Payload size = "1"
+2020-03-23 22:04:58,108 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "45". Payload size = "1"
+2020-03-23 22:04:58,672 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "45". Payload size = "1"
+2020-03-24 06:57:17,163 ERROR [MQTT Rec: alex                ] [MqttCallbackHandler           ]  - Connection OrangePI lost
+Соединение потеряно (32109) - java.net.SocketException: Network is unreachable: recv failed
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:146)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.SocketException: Network is unreachable: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.io.DataInputStream.readByte(Unknown Source)
+	at org.eclipse.paho.client.mqttv3.internal.wire.MqttInputStream.readMqttWireMessage(MqttInputStream.java:65)
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:107)
+	... 1 more
+2020-03-24 06:57:19,242 WARN  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Client not connected
+2020-03-24 06:57:19,242 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Successfully unsubscribed from #
+2020-03-29 23:24:07,840 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Default configuration file present (C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml) = true
+2020-03-29 23:24:07,855 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Loading configuration file from C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml
+2020-03-29 23:24:14,813 ERROR [JavaFX Application Thread     ] [ControlPanelController        ]  - Cannot retrieve version info
+pl.baczkowicz.spy.exceptions.XMLException: Cannot read version info from http://baczkowicz.pl/mqtt-spy/version_0_6_0.xml?current=1.0.0-3
+	at pl.baczkowicz.spy.ui.versions.VersionManager.loadVersions(VersionManager.java:102)
+	at pl.baczkowicz.spy.ui.controllers.ControlPanelController$2.run(ControlPanelController.java:203)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.net.NetworkClient.doConnect(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at pl.baczkowicz.spy.ui.versions.VersionManager.loadVersions(VersionManager.java:94)
+	... 2 more
+2020-03-29 23:24:19,022 INFO  [JavaFX Application Thread     ] [MqttConfigurationUtils        ]  - Auto-complete for server URI (192.168.1.70 -> tcp://192.168.1.70)
+2020-03-29 23:24:19,327 ERROR [JavaFX Application Thread     ] [FileUtils                     ]  - No files in C:\Users\alexm\mqtt-spy\
+2020-03-29 23:24:19,882 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-03-29 23:25:01,891 WARN  [MQTT Con: alex                ] [MqttConnectionResultHandler   ]  - Connecting to OrangePI failed
+Не удается подключиться к серверу (32103) - java.net.ConnectException: Connection timed out: connect
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:79)
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:650)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:70)
+	... 2 more
+2020-03-29 23:27:51,229 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-03-29 23:27:51,251 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-03-29 23:27:51,251 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-03-29 23:27:59,233 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to #
+2020-03-29 23:27:59,234 INFO  [JavaFX Application Thread     ] [MqttSubscriptionViewManager   ]  - Creating subscription for #
+2020-03-29 23:27:59,289 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to #
+2020-03-29 23:28:15,378 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-03-29 23:28:23,133 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-03-29 23:28:25,690 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-03-29 23:28:28,148 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-03-29 23:28:32,322 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-03-29 23:28:37,050 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-03-29 23:28:37,251 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-03-29 23:28:37,456 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-03-29 23:28:37,664 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-03-29 23:29:30,969 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-03-29 23:29:46,415 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-03-29 23:30:56,631 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-03-29 23:31:03,030 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-03-29 23:31:03,807 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-03-29 23:31:04,478 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "1". Payload size = "6"
+2020-05-06 22:13:53,639 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Default configuration file present (C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml) = true
+2020-05-06 22:13:53,653 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Loading configuration file from C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml
+2020-05-06 22:13:55,641 INFO  [JavaFX Application Thread     ] [MqttConfigurationUtils        ]  - Auto-complete for server URI (192.168.1.70 -> tcp://192.168.1.70)
+2020-05-06 22:13:55,932 ERROR [JavaFX Application Thread     ] [FileUtils                     ]  - No files in C:\Users\alexm\mqtt-spy\
+2020-05-06 22:13:56,483 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-05-06 22:13:56,516 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-05-06 22:13:56,521 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-05-06 22:13:58,388 ERROR [JavaFX Application Thread     ] [ControlPanelController        ]  - Cannot retrieve version info
+pl.baczkowicz.spy.exceptions.XMLException: Cannot unmarshal the XML
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromString(XMLParser.java:285)
+	at pl.baczkowicz.spy.ui.versions.VersionManager.loadVersions(VersionManager.java:98)
+	at pl.baczkowicz.spy.ui.controllers.ControlPanelController$2.run(ControlPanelController.java:203)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: javax.xml.bind.UnmarshalException
+ - with linked exception:
+[org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.]
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.createUnmarshalException(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.createUnmarshalException(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(Unknown Source)
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Unknown Source)
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Unknown Source)
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromString(XMLParser.java:277)
+	... 3 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	... 8 more
+2020-05-06 22:14:04,424 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "#". Payload size = "0"
+2020-05-06 22:14:04,425 ERROR [JavaFX Application Thread     ] [SpyUncaughtExceptionHandler   ]  - Thread Thread[JavaFX Application Thread,5,main] failed with java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1774)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Node.fireEvent(Node.java:8411)
+	at javafx.scene.control.SplitMenuButton.fire(SplitMenuButton.java:113)
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:182)
+	at com.sun.javafx.scene.control.behavior.MenuButtonBehaviorBase.mouseReleased(MenuButtonBehaviorBase.java:182)
+	at com.sun.javafx.scene.control.skin.MenuButtonSkinBase.lambda$new$1(MenuButtonSkinBase.java:83)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3757)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:394)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$2(GlassViewEventHandler.java:432)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:410)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:431)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$4(WinApplication.java:186)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.Trampoline.invoke(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor8.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at sun.reflect.misc.MethodUtil.invoke(Unknown Source)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	... 60 more
+Caused by: java.lang.IllegalArgumentException: The topic name MUST NOT contain any wildcard characters (#+)
+	at org.eclipse.paho.client.mqttv3.MqttTopic.validate(MqttTopic.java:203)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.publish(MqttAsyncClient.java:1018)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.publish(MqttAsyncClient.java:991)
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.publish(MqttAsyncClient.java:998)
+	at pl.baczkowicz.mqttspy.connectivity.MqttAsyncConnection.publish(MqttAsyncConnection.java:216)
+	at pl.baczkowicz.mqttspy.ui.controllers.NewPublicationController.publish(NewPublicationController.java:614)
+	... 70 more
+2020-05-06 22:14:11,972 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to #
+2020-05-06 22:14:11,973 INFO  [JavaFX Application Thread     ] [MqttSubscriptionViewManager   ]  - Creating subscription for #
+2020-05-06 22:14:12,044 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to #
+2020-05-06 22:42:32,608 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:45:46,823 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:45:47,999 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:24,582 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:31,680 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:33,306 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:33,998 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:34,400 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:34,609 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:34,794 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:34,940 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:35,112 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:35,271 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:35,434 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:35,603 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:35,937 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:36,124 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:36,278 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:36,434 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:36,608 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:36,810 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:40,662 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:40,860 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:41,040 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:41,234 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:41,416 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:41,584 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:41,750 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:42,090 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:42,278 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:42,465 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:42,645 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:42,819 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:42,978 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:43,148 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:43,304 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:43,468 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:43,630 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:43,804 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:43,989 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:44,190 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:48,878 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:49,048 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:49,216 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:49,388 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:49,565 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:49,740 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:49,902 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:50,064 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:50,248 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:50,450 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:50,632 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:50,796 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:51,068 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:51,282 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:51,498 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:51,722 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:51,913 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:52,095 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:52,297 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:52,482 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:52,682 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:52,892 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:53,060 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:53,244 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:53,434 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:53,620 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:55:53,830 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-06 22:59:59,338 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Successfully unsubscribed from #
+2020-05-06 22:59:59,339 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting alex from [tcp://192.168.1.70]
+2020-05-06 22:59:59,342 INFO  [MQTT Disc: alex               ] [MqttDisconnectionResultHandler]  - OrangePI disconnected
+2020-05-06 23:00:06,576 INFO  [JavaFX Application Thread     ] [EditConnectionsController     ]  - Selecting first item...
+2020-05-06 23:00:19,173 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-05-06 23:00:19,176 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-05-06 23:00:19,176 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-05-08 19:50:37,303 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Default configuration file present (C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml) = true
+2020-05-08 19:50:37,363 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Loading configuration file from C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml
+2020-05-08 19:50:42,990 INFO  [JavaFX Application Thread     ] [EditConnectionsController     ]  - Selecting first item...
+2020-05-08 19:50:43,690 ERROR [JavaFX Application Thread     ] [ControlPanelController        ]  - Cannot retrieve version info
+pl.baczkowicz.spy.exceptions.XMLException: Cannot unmarshal the XML
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromString(XMLParser.java:285)
+	at pl.baczkowicz.spy.ui.versions.VersionManager.loadVersions(VersionManager.java:98)
+	at pl.baczkowicz.spy.ui.controllers.ControlPanelController$2.run(ControlPanelController.java:203)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: javax.xml.bind.UnmarshalException
+ - with linked exception:
+[org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.]
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.createUnmarshalException(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.createUnmarshalException(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(Unknown Source)
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Unknown Source)
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Unknown Source)
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromString(XMLParser.java:277)
+	... 3 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	... 8 more
+2020-05-08 19:50:47,795 INFO  [JavaFX Application Thread     ] [MqttConfigurationUtils        ]  - Auto-complete for server URI (192.168.1.70 -> tcp://192.168.1.70)
+2020-05-08 19:50:47,947 ERROR [JavaFX Application Thread     ] [FileUtils                     ]  - No files in C:\Users\alexm\mqtt-spy\
+2020-05-08 19:50:48,492 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-05-08 19:50:48,504 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-05-08 19:50:48,504 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-05-08 19:51:25,130 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-08 19:53:24,358 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to #
+2020-05-08 19:53:24,358 INFO  [JavaFX Application Thread     ] [MqttSubscriptionViewManager   ]  - Creating subscription for #
+2020-05-08 19:53:24,447 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to #
+2020-05-08 22:12:54,641 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-08 22:12:55,126 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-08 22:12:55,332 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "3". Payload size = "1"
+2020-05-09 13:30:45,145 ERROR [MQTT Rec: alex                ] [MqttCallbackHandler           ]  - Connection OrangePI lost
+Соединение потеряно (32109) - java.net.SocketException: Network is unreachable: recv failed
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:146)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.SocketException: Network is unreachable: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.io.DataInputStream.readByte(Unknown Source)
+	at org.eclipse.paho.client.mqttv3.internal.wire.MqttInputStream.readMqttWireMessage(MqttInputStream.java:65)
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:107)
+	... 1 more
+2020-05-09 13:30:47,284 WARN  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Client not connected
+2020-05-09 13:30:47,284 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Successfully unsubscribed from #
+2020-05-09 13:38:57,206 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-05-09 13:38:57,212 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-05-09 13:38:57,213 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-05-09 13:39:25,649 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting alex from [tcp://192.168.1.70]
+2020-05-09 13:39:25,652 INFO  [MQTT Disc: alex               ] [MqttDisconnectionResultHandler]  - OrangePI disconnected
+2020-05-09 13:39:27,668 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-05-09 13:39:27,671 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-05-09 13:39:27,679 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-05-09 13:42:20,787 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "/hall/lamp". Payload size = "1"
+2020-05-09 13:43:08,261 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "/hall/lamp". Payload size = "1"
+2020-05-09 13:43:09,032 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "/hall/lamp". Payload size = "1"
+2020-05-09 13:43:09,549 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "/hall/lamp". Payload size = "1"
+2020-05-09 13:43:10,070 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "/hall/lamp". Payload size = "1"
+2020-05-09 13:43:18,651 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "/hall/lamp". Payload size = "1"
+2020-05-09 13:43:18,995 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "/hall/lamp". Payload size = "1"
+2020-05-09 13:43:19,205 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "/hall/lamp". Payload size = "1"
+2020-05-09 13:43:19,415 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "/hall/lamp". Payload size = "1"
+2020-05-09 13:43:19,649 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "/hall/lamp". Payload size = "1"
+2020-05-09 13:44:04,252 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting alex from [tcp://192.168.1.70]
+2020-05-09 13:44:04,254 INFO  [MQTT Disc: alex               ] [MqttDisconnectionResultHandler]  - OrangePI disconnected
+2020-05-09 13:44:10,393 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Default configuration file present (C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml) = true
+2020-05-09 13:44:10,400 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Loading configuration file from C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml
+2020-05-09 13:44:15,199 ERROR [JavaFX Application Thread     ] [ControlPanelController        ]  - Cannot retrieve version info
+pl.baczkowicz.spy.exceptions.XMLException: Cannot unmarshal the XML
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromString(XMLParser.java:285)
+	at pl.baczkowicz.spy.ui.versions.VersionManager.loadVersions(VersionManager.java:98)
+	at pl.baczkowicz.spy.ui.controllers.ControlPanelController$2.run(ControlPanelController.java:203)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: javax.xml.bind.UnmarshalException
+ - with linked exception:
+[org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.]
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.createUnmarshalException(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.createUnmarshalException(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(Unknown Source)
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Unknown Source)
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Unknown Source)
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromString(XMLParser.java:277)
+	... 3 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	... 8 more
+2020-05-09 13:44:16,401 INFO  [JavaFX Application Thread     ] [MqttConfigurationUtils        ]  - Auto-complete for server URI (192.168.1.70 -> tcp://192.168.1.70)
+2020-05-09 13:44:16,750 ERROR [JavaFX Application Thread     ] [FileUtils                     ]  - No files in C:\Users\alexm\mqtt-spy\
+2020-05-09 13:44:17,305 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-05-09 13:44:17,318 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-05-09 13:44:17,318 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-05-09 13:44:24,456 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to #
+2020-05-09 13:44:24,456 INFO  [JavaFX Application Thread     ] [MqttSubscriptionViewManager   ]  - Creating subscription for #
+2020-05-09 13:44:24,512 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to #
+2020-05-11 12:51:20,823 ERROR [MQTT Rec: alex                ] [MqttCallbackHandler           ]  - Connection OrangePI lost
+Соединение потеряно (32109) - java.net.SocketException: Network is unreachable: recv failed
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:146)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.SocketException: Network is unreachable: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.io.DataInputStream.readByte(Unknown Source)
+	at org.eclipse.paho.client.mqttv3.internal.wire.MqttInputStream.readMqttWireMessage(MqttInputStream.java:65)
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:107)
+	... 1 more
+2020-05-11 12:51:23,085 WARN  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Client not connected
+2020-05-11 12:51:23,085 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Successfully unsubscribed from #
+2020-05-11 12:51:47,150 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-05-11 12:51:47,170 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-05-11 12:51:47,173 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-05-11 12:52:14,359 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting alex from [tcp://192.168.1.70]
+2020-05-11 12:52:14,364 INFO  [MQTT Disc: alex               ] [MqttDisconnectionResultHandler]  - OrangePI disconnected
+2020-05-11 12:52:23,393 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Default configuration file present (C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml) = true
+2020-05-11 12:52:23,402 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Loading configuration file from C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml
+2020-05-11 12:52:25,211 INFO  [JavaFX Application Thread     ] [MqttConfigurationUtils        ]  - Auto-complete for server URI (192.168.1.70 -> tcp://192.168.1.70)
+2020-05-11 12:52:25,559 ERROR [JavaFX Application Thread     ] [FileUtils                     ]  - No files in C:\Users\alexm\mqtt-spy\
+2020-05-11 12:52:26,114 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-05-11 12:52:26,151 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-05-11 12:52:26,159 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-05-11 12:52:28,115 ERROR [JavaFX Application Thread     ] [ControlPanelController        ]  - Cannot retrieve version info
+pl.baczkowicz.spy.exceptions.XMLException: Cannot unmarshal the XML
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromString(XMLParser.java:285)
+	at pl.baczkowicz.spy.ui.versions.VersionManager.loadVersions(VersionManager.java:98)
+	at pl.baczkowicz.spy.ui.controllers.ControlPanelController$2.run(ControlPanelController.java:203)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: javax.xml.bind.UnmarshalException
+ - with linked exception:
+[org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.]
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.createUnmarshalException(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.createUnmarshalException(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(Unknown Source)
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Unknown Source)
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Unknown Source)
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromString(XMLParser.java:277)
+	... 3 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	... 8 more
+2020-05-11 12:52:38,866 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to #
+2020-05-11 12:52:38,867 INFO  [JavaFX Application Thread     ] [MqttSubscriptionViewManager   ]  - Creating subscription for #
+2020-05-11 12:52:38,922 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to #
+2020-05-12 10:01:55,722 ERROR [MQTT Rec: alex                ] [MqttCallbackHandler           ]  - Connection OrangePI lost
+Соединение потеряно (32109) - java.net.SocketException: Network is unreachable: recv failed
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:146)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.SocketException: Network is unreachable: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.net.SocketInputStream.read(Unknown Source)
+	at java.io.DataInputStream.readByte(Unknown Source)
+	at org.eclipse.paho.client.mqttv3.internal.wire.MqttInputStream.readMqttWireMessage(MqttInputStream.java:65)
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:107)
+	... 1 more
+2020-05-12 10:01:56,645 WARN  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Client not connected
+2020-05-12 10:01:56,645 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Successfully unsubscribed from #
+2020-05-12 13:34:02,625 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting alex from [tcp://192.168.1.70]
+2020-05-12 13:34:26,048 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Default configuration file present (C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml) = true
+2020-05-12 13:34:26,062 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Loading configuration file from C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml
+2020-05-12 13:34:27,570 INFO  [JavaFX Application Thread     ] [MqttConfigurationUtils        ]  - Auto-complete for server URI (192.168.1.70 -> tcp://192.168.1.70)
+2020-05-12 13:34:27,830 ERROR [JavaFX Application Thread     ] [FileUtils                     ]  - No files in C:\Users\alexm\mqtt-spy\
+2020-05-12 13:34:28,378 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-05-12 13:34:28,402 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-05-12 13:34:28,403 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-05-12 13:34:30,755 ERROR [JavaFX Application Thread     ] [ControlPanelController        ]  - Cannot retrieve version info
+pl.baczkowicz.spy.exceptions.XMLException: Cannot unmarshal the XML
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromString(XMLParser.java:285)
+	at pl.baczkowicz.spy.ui.versions.VersionManager.loadVersions(VersionManager.java:98)
+	at pl.baczkowicz.spy.ui.controllers.ControlPanelController$2.run(ControlPanelController.java:203)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: javax.xml.bind.UnmarshalException
+ - with linked exception:
+[org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.]
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.createUnmarshalException(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.createUnmarshalException(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal0(Unknown Source)
+	at com.sun.xml.internal.bind.v2.runtime.unmarshaller.UnmarshallerImpl.unmarshal(Unknown Source)
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Unknown Source)
+	at javax.xml.bind.helpers.AbstractUnmarshallerImpl.unmarshal(Unknown Source)
+	at pl.baczkowicz.spy.xml.XMLParser.loadFromString(XMLParser.java:277)
+	... 3 more
+Caused by: org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 1; Premature end of file.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(Unknown Source)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.fatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLScanner.reportFatalError(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(Unknown Source)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(Unknown Source)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(Unknown Source)
+	... 8 more
+2020-05-12 13:34:36,244 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to #
+2020-05-12 13:34:36,244 INFO  [JavaFX Application Thread     ] [MqttSubscriptionViewManager   ]  - Creating subscription for #
+2020-05-12 13:34:36,389 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to #
+2020-05-13 00:39:02,553 ERROR [MQTT Rec: alex                ] [MqttCallbackHandler           ]  - Connection OrangePI lost
+Соединение потеряно (32109) - java.io.EOFException
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:146)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readByte(Unknown Source)
+	at org.eclipse.paho.client.mqttv3.internal.wire.MqttInputStream.readMqttWireMessage(MqttInputStream.java:65)
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:107)
+	... 1 more
+2020-05-13 00:39:02,744 WARN  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Client not connected
+2020-05-13 00:39:02,747 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Successfully unsubscribed from #
+2020-06-06 20:36:54,557 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Default configuration file present (C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml) = true
+2020-06-06 20:36:54,582 INFO  [JavaFX Application Thread     ] [MqttViewManager               ]  - Loading configuration file from C:\Users\alexm\mqtt-spy\mqtt-spy-configuration.xml
+2020-06-06 20:36:59,242 ERROR [JavaFX Application Thread     ] [ControlPanelController        ]  - Cannot retrieve version info
+pl.baczkowicz.spy.exceptions.XMLException: Cannot read version info from http://baczkowicz.pl/mqtt-spy/version_0_6_0.xml?current=1.0.0-3
+	at pl.baczkowicz.spy.ui.versions.VersionManager.loadVersions(VersionManager.java:102)
+	at pl.baczkowicz.spy.ui.controllers.ControlPanelController$2.run(ControlPanelController.java:203)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.UnknownHostException: baczkowicz.pl
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at sun.net.NetworkClient.doConnect(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.openServer(Unknown Source)
+	at sun.net.www.http.HttpClient.<init>(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.http.HttpClient.New(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(Unknown Source)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(Unknown Source)
+	at java.net.URL.openStream(Unknown Source)
+	at pl.baczkowicz.spy.ui.versions.VersionManager.loadVersions(VersionManager.java:94)
+	... 2 more
+2020-06-06 20:36:59,299 INFO  [JavaFX Application Thread     ] [MqttConfigurationUtils        ]  - Auto-complete for server URI (192.168.1.70 -> tcp://192.168.1.70)
+2020-06-06 20:36:59,592 ERROR [JavaFX Application Thread     ] [FileUtils                     ]  - No files in C:\Users\alexm\mqtt-spy\
+2020-06-06 20:37:00,146 INFO  [mqtt-spy [ConnectionRunnable for OrangePI]] [MqttAsyncConnectionRunnable   ]  - Connecting client ID [alex] to server [[tcp://192.168.1.70]]; options = 
+============== Connection options ==============
+CleanSession                :  true
+SocketFactory               :  null
+MqttVersion                 :  0
+KeepAliveInterval           :  60
+ConTimeout                  :  30
+UserName                    :  null
+SSLProperties               :  null
+WillDestination             :  null
+==========================================
+
+2020-06-06 20:37:00,180 INFO  [MQTT Call: alex               ] [MqttConnectionResultHandler   ]  - OrangePI connected
+2020-06-06 20:37:00,181 INFO  [JavaFX Application Thread     ] [MqttEventHandler              ]  - About to resubscribe to all requested topics
+2020-06-06 20:37:08,888 INFO  [JavaFX Application Thread     ] [NewSubscriptionController     ]  - Subscribing to #
+2020-06-06 20:37:08,888 INFO  [JavaFX Application Thread     ] [MqttSubscriptionViewManager   ]  - Creating subscription for #
+2020-06-06 20:37:09,042 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Subscribed to #
+2020-06-06 20:37:27,674 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 20:39:02,681 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 21:07:06,475 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 21:07:20,711 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 21:07:22,798 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 21:07:23,409 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 21:07:23,665 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 21:07:24,631 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 21:11:39,272 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 21:11:39,801 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 21:11:40,192 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 21:11:40,521 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 21:11:40,764 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 21:28:09,146 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 21:28:10,288 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 21:28:11,101 INFO  [JavaFX Application Thread     ] [MqttAsyncConnection           ]  - Publishing message on topic "5345". Payload size = "3"
+2020-06-06 22:42:31,131 INFO  [JavaFX Application Thread     ] [BaseMqttConnection            ]  - Successfully unsubscribed from #
+2020-06-06 22:42:31,132 INFO  [JavaFX Application Thread     ] [MqttConnectionWithReconnection]  - Disconnecting alex from [tcp://192.168.1.70]
+2020-06-06 22:42:31,135 INFO  [MQTT Disc: alex               ] [MqttDisconnectionResultHandler]  - OrangePI disconnected
