@@ -219,12 +219,12 @@ byte num = 255;
 byte value = 0;
 
 String serial_temp = "";
-byte serial_num = 0;
 
-String arduino_id = "1";
 
+
+// Объявление переменных
+// для read_serial
 char serial_char = 0;
-
 
 struct serial_struct
 {
@@ -241,6 +241,8 @@ struct serial_struct
 
 //Структура для хранения данных из сериала
 serial_struct serial_vars;
+byte serial_num = 0;
+String arduino_id = "1";
 
 
 
@@ -547,7 +549,7 @@ void read_serial()
 	}
 
 	// После проверки буфера сообщений проверяем id и если он есть, то ковертируем в цифры
-	if (serial_vars.id != "")
+	if (serial_vars.id != "" and serial_num == 4)
 	{
 		serial_vars.b_id = serial_vars.id.toInt();
 		serial_vars.b_topic = serial_vars.topic.toInt();
