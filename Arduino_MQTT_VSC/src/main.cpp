@@ -264,20 +264,8 @@ void setup()
 
 	//Расширитель портов
 	expander.begin();
-	/*expander.pinMode(0, INPUT);
-	expander.pullDown(0);
-	expander.pinMode(1, INPUT);
-	expander.pullDown(1);
-	expander.pinMode(2, INPUT);
-	expander.pullDown(3);*/
-
 	expander_2.begin();
-	/*expander_2.pinMode(0, INPUT);
-	expander_2.pullDown(0);
-	expander_2.pinMode(1, INPUT);
-	expander_2.pullDown(1);
-	expander_2.pinMode(2, INPUT);
-	expander_2.pullDown(3);*/
+
 
 	//74HC595
 	//устанавливаем режим OUTPUT 
@@ -285,18 +273,10 @@ void setup()
 	pinMode(SH_CP, OUTPUT);
 	pinMode(DS, OUTPUT);
 
-
-
-	//pinMode(btnSpeac, INPUT);   //а 2й – входом
-	//pinMode(btn, INPUT);   //а 3й – входом
-	pinMode(BTN, INPUT);   //а 9й – входом кнопкиъ
+	pinMode(BTN, INPUT);   //а 9й – входом кнопки
 
 	pinMode(speacRelay, OUTPUT);  //8й вывод будет выходом
 	digitalWrite(speacRelay, LOW);
-
-	//pinMode(micLamp, OUTPUT);  //9й вывод будет выходом
-	// digitalWrite(micLamp, LOW);
-
 
 	// время
 	while (!Serial) ; // Только для платы Leonardo
