@@ -30,7 +30,7 @@
 void set_reg_shift(bool send);
 
 // получить значения регистров  0 - № PCF (array_name), 1 - № регистра PCF
-byte get_value_regs_PCF(byte i, byte j);
+byte get_value_regs_PCF(byte i);
 
 // Чтение и установка данных из Serial
 void read_serial();
@@ -68,111 +68,22 @@ void send_to_serial( byte topic, byte num, int value);
 #define DS  2
 #define ST_CP  3
 #define SH_CP  4
-//Кол-во сдвиговых регистров
-#define COUNT_SHIFT_REG  2
+
 
 #define speacRelay      8
 //#define micLamp      3
-
-//Инфрокарсный пульт
-IRrecv irrecv(7);
-decode_results results;
-//RGB светодиод
-//#define redPin  10
-//#define greenPin  13
-//#define bluePin  9
-
-
 
 const int btns = A0;   //496, 333, ,249, 199, 165
 const int sensTherm = A2; 
 const int sensLight = A3;  
    
-
-byte TempBtn=0;
-int tempBtns;
-int tempTherm;
-int sensorValue = 0;
-int val;
-int myInts[10];
-int counter = 0;
-int counterSr04 = 0;
-char ch = 0;
-
-String str = "";
-byte  strKey = 0;
-String strAdr = " ";
-String strVal = " ";
-
-
- //Ultrasonic ultrasonic(sr04Trig, sr04Echo);
- 
-
-
-//Драйвер двигателя
-/*int IN1 = 5; 
-int IN2 = 6;
-int EN1 = 9;*/
-
-
-
-/*byte path[3]= {
-  B01111111,
-  B10111111,
-  B11011111
-  };*/
-  
-  //Rgb светодиод
-/*const int RedPin = 1;
-const int GreenPin = 2;
-const int BluePin = 3;
-int redPin = 5;
-int greenPin = 6;
-int bluePin = 9;*/
-
-String redNum;
-String greenNum;
-String blueNum;
- byte color[][3]  = {
-	{119, 221, 231},
-	{227, 38, 54},
-	{153, 102, 204},
-	{106, 90, 205},
-	{0, 49, 83},
-	{119, 221, 231},
-	{176, 63, 53},
-	{175, 238, 238},
-	{152, 251, 152},
-	{255, 220, 51},
-	{42, 141, 156},
-	{0, 155, 118},
-	{144, 0, 32},
-	{248, 23, 62}
-  };
-
-int collorRow = sizeof(color) /3; //Кол-во строк массива, 3 столбца 
-bool isTimeSet = false; //флаг, указывающий на то, была ли уже задана дата
-
-
-int tp1,tp2,tp3 = 0;
-byte varIrc = 0;
-
-
 DHT dht(DHTPIN, DHTTYPE);
-uint32_t delayMS;
+
 
 
 //*******************************************
 //ПЕРЕМЕННЫЕ ДЛЯ РЕГИСТРОВ
 #define ARRAY_LENGTH 3
-
-//Названия сдвиговых регистров
-const char *array_name[]  = 
-{
-  "/h/shift",   // 0
-  "/k/shift",     // 1
-  "/h/dht11t"     // 2
-};
 
 	//переменные 74HC595
 
@@ -183,13 +94,14 @@ byte array_shift_reg[] =
 };
 byte count_reg_shift = sizeof(array_shift_reg); //Кол-во строк массива, 3 столбца 
 
- byte array_count_reg[][3]  = {
-//	PCF			>3s			связь со сдвиговым
-	{0b00000000, 0b00000000, 0b11000011},
-	{0b00000000, 0b00000000, 0b11000011}
+// 0 - сдвиговые регистры, 1 -  не в маске, 2 - зажатые, 3 - маска 
+ byte arr_shift_reg[][4]  = {
+//	PCF			 без маски	 >3s		 маска, связь со сдвиговым
+	{0b00000000, 0b00000000, 0b00000000, 0b11000011},
+	{0b00000000, 0b00000000, 0b00000000, 0b11000011}
   };
 
-byte count_reg_PCF = sizeof(array_count_reg)/3; //Кол-во строк массива, 3 столбца 
+byte count_reg_PCF = sizeof(arr_shift_reg)/4; //Кол-во строк массива, 4 столбца 
 
 //Для циклов
 byte i, j;
@@ -198,28 +110,23 @@ byte byte_PCF_reg;
 //byte registers_shift_1 = 0b00000000;
 //byte registers_shift_2 = 0b00000000;
 
-// временное значение сдвигового регичтра
-byte value_reg_shift = 0;
 
-//PCF8574
-byte num_reg_PCF8574 = 0;
-byte value_reg_PCF = 0;
 
-byte value_time_delay = 0;
+
 
 #include <PCF8574.h>  // Расширитель портов
-PCF8574 expander(0x20);  
-PCF8574 expander_2(0x21); 
+PCF8574 expander_21(0x21); //1+
+PCF8574 expander_20(0x20);  //3-
 
-//переменные для работы с сериал портом
-byte id = 0;
-//byte check = 0;
-byte topic = 0;
-byte num = 255;
-byte value = 0;
+// Храним значеие байта из PCF 
+byte value_reg_PCF = 0;
+// Храним значеие маски для PCF 
+byte mask_PCF = 0;
 
-String serial_temp = "";
-
+//значение задержки, если переполнено, то прошло больше 3 сек и кнопка считается зажатой
+byte value_time_delay = 0;
+// временное значение сдвигового регичтра
+byte value_reg_shift = 0;
 
 
 // Объявление переменных
@@ -251,20 +158,23 @@ String arduino_id = "1";
 
 void setup()  
 {
-	//LCD
-	/*lcd.init();                     
-	lcd.backlight();// Включаем подсветку дисплея
-	lcd.print("PUSH?");*/
-	//Конец LCD
+	//Устанавливаем сначала все порты на вывод
+	for (byte i = 1; i <= 14; i++)
+	{
+		pinMode(i, OUTPUT);  
+		digitalWrite(i, LOW);
+	}
+
+
 	pinMode(sr04Trig, OUTPUT); 
 	pinMode(sr04Echo, INPUT); 
-	//Serial.begin(115200);
+
 	Serial.begin(115200);
 	Serial.println("Start");
 
 	//Расширитель портов
-	expander.begin();
-	expander_2.begin();
+	expander_20.begin();
+	expander_21.begin();
 
 
 	//74HC595
@@ -272,6 +182,7 @@ void setup()
 	pinMode(ST_CP, OUTPUT);
 	pinMode(SH_CP, OUTPUT);
 	pinMode(DS, OUTPUT);
+	digitalWrite(ST_CP, LOW);
 
 	pinMode(BTN, INPUT);   //а 9й – входом кнопки
 
@@ -286,42 +197,70 @@ void setup()
 	else
 		Serial.println("RTC has set the system time");
 
-	dht.begin();
+	//dht.begin();
 
-	//void read_serial();
 
-	// TEST
-	Serial.println("count_reg_shift - " + String(count_reg_shift));
-	Serial.println("count_reg_PCF - " + String(count_reg_PCF));
 }
 
 // TODO:  Основной цикл
 void loop()
 {
+	//Для отладки PCF
+	delay(2000);
+	//for (int i = 0; i < 8; i++)
+	//{
+		/*Serial.print(i);
+		Serial.print(get_value_regs_PCF(0, i));
+		delay(10);
+		Serial.println(get_value_regs_PCF(1, i));
+		delay(10);*/
+		Serial.println("--------");
+		Serial.println(expander_21.read8(), BIN);
+		Serial.println(expander_20.read8(), BIN);
 
-	//Serial.println("START");
+		if (expander_21.read8() == 0b00000010)
+		{
+			array_shift_reg[0] = 255;
+			array_shift_reg[1] = 255;
+			//set_reg_shift(1);
+		}
+		else
+		{
+			array_shift_reg[0] = 0;
+			array_shift_reg[1] = 0;
+		}
+		
+			//Serial.println("1");
+
+		
+	//}
+	//Serial.println("---------------");
+
+	//Serial.println("1");
 	// читаем данные с Serial порта и записываем в структуру
-	read_serial();
+	///read_serial();
+	//Serial.println("2");
+
 
 	// проверяем все регистры и получаем данные. если что-то нажато
-	read_array_regs();
-
+	///read_array_regs();
+	//Serial.println("3");
 	// Устанавливаем нажатые кнопки в сдвиговые регистры
-	set_push_PCF_to_shiftreg();
-
+	///set_push_PCF_to_shiftreg();
+	//Serial.println("4");
 	//  TODO: Установить значения в сдвиговые регистры
-	set_reg_shift(0);
-
-	serial_clear();
-
+	set_reg_shift(1);
+	//Serial.println("5");
+	//serial_clear();
+	//Serial.println("6");
 
 	//Вывод данных 5000 - 20 минут
-	if (counter == 5000)
+	/*if (counter == 5000)
 	{	
 		counter = 0;
-		Serial.println("/hall/sensTherm@"+String(float(Thermister(analogRead(sensTherm))),1)+"%"); 
-		Serial.println("/hall/sensLight@"+String(float(analogRead(sensLight)),1)+"%");
-		Serial.println("/hall/timeEsp@"+digitalClockDisplay()+"%");
+		Serial.println("i1t50n0v"+String(float(Thermister(analogRead(sensTherm))),1)); 
+		Serial.println("i1t51n0v"+String(float(analogRead(sensLight)),1));
+		Serial.println("i1t52n0v"+digitalClockDisplay());
 		//delay(5);
 		val = !digitalRead(speacRelay);
 
@@ -342,7 +281,7 @@ void loop()
 
 		
 	}
-	counter++;
+	counter++;*/
 	//Serial.println("END");
 	//Serial.println("df");
 	//delay(200);	
@@ -356,53 +295,83 @@ void loop()
 // TODO: чтение регистров  и запись в active_reg
 void read_array_regs ()
 {
+	// биты, которые нажаты и подходят по маске
+	byte act_mask = 0;
+	// биты, которые нажаты и не подходят по маске
+	byte not_act_mask = 0;
+	// биты, которые нажаты и не подходят по маске
+	byte num_set_reg_pcf = 0;
+	// флаг загрузки в ренистры сдвига
+	byte flag_set_shift = 0;
+
+
+
+	
+
 	//Serial.println("Start arr");
 	for (i=0; i < count_reg_PCF; i++)
 	{
-			value_reg_PCF = 0;
-			
+		value_reg_PCF = get_value_regs_PCF(i);
+		//получаем маску
+		mask_PCF = arr_shift_reg[i][2];
+		// Выделяем биты, которые подходят по маске
+		act_mask = value_reg_PCF & mask_PCF;
+		// Выделяем биты, которые не подходят по маске
+		not_act_mask = value_reg_PCF xor act_mask; 
+		num_set_reg_pcf = 255;
 
-			// Перебираем регистры их 8 штук
-			for (j=0; j < 8; j++)
-			{	
-				value_time_delay = 0;
-				// пока отпустится кнопка, что бы не было нескольких срабатыванй
+		//Вычисляем номер регистра, который установлен
+		for ( j = 0; j < 8; j++)
+		{
+			if (bitRead(act_mask, j) == 1)
+			{
+				num_set_reg_pcf = j;
+				break;
+			}
+		}
 
-				//Serial.println("1 - " + String(i) + "-" + String(j));
-				value_reg_PCF = get_value_regs_PCF(i, j);
-				while(value_reg_PCF > 0 )
+		while(value_reg_PCF > 0 )
+		{
+			value_reg_PCF = get_value_regs_PCF(i);
+			//если отпустили кнопку, то устанавливаем регистры
+			if (value_reg_PCF == 0)
+			{
+				
+				//Установка в регистр, нажатия кнопки
+
+				if(value_time_delay == 255) // Если была зажата
 				{
-					/*// Отладка
-					Serial.println("value_reg_PCF - " + String(value_reg_PCF));
-					Serial.println("i - " + String(i));
-					Serial.println("j - " + String(j));
-					*/
-					//Serial.println("2 - " + String(value_reg_PCF));
-					//delay(500);
-					value_reg_PCF = get_value_regs_PCF(i, j);
-
-					//если отпустили кнопку, то устанавливаем регистры
-					if (value_reg_PCF == 0)
+					//bitSet(arr_shift_reg[i][1], num_set_reg_pcf);
+					arr_shift_reg[i][2] = arr_shift_reg[i][2] xor act_mask;
+				}
+				else  // если не зажата
+				{
+					//bitSet(arr_shift_reg[i][0], num_set_reg_pcf);
+					arr_shift_reg[i][0] = arr_shift_reg[i][0] xor act_mask;
+					if (act_mask !=0)
 					{
-						
-						//Установка в регистр, нажатия кнопки
-						bitSet(array_count_reg[i][0], j);
-						if(value_time_delay == 255)
-						{
-							bitSet(array_count_reg[i][1], j);
-						}
-						
+						flag_set_shift = 1;	
 					}
-					//Считаем время задержки
-					delay(11);
-					if (value_time_delay != 255)
-						{
-							value_time_delay++;
-						}
-
+					arr_shift_reg[i][1] = arr_shift_reg[i][1] xor not_act_mask;
 				}
 
-		  	}
+				
+			}
+			//Считаем время задержки
+			delay(11);
+			if (value_time_delay != 255)
+				{
+					value_time_delay++;
+				}	
+
+		}
+	}
+
+	// Устанавливаем регистры сдвига, если есть нажатия кнопок
+	if (flag_set_shift == 1)
+	{
+		set_reg_shift(0);
+
 	}
 }
 
@@ -411,11 +380,16 @@ void set_push_PCF_to_shiftreg()
 	//Serial.println("Start push");
 	for (i = 0; i < count_reg_PCF; i++)
 	{
-		byte_PCF_reg = array_count_reg[i][0];
+		byte_PCF_reg = arr_shift_reg[i][0];
 
 		// Если не нажата ни одна кнопка, то переходим к следующей микросхеме
 		if (byte_PCF_reg != 0)
 		{
+			
+			
+			
+			
+			//////////////////////////////////////////
 			for (j=0; j < 8; j++)
 			{
 				/*// Отладка
@@ -427,7 +401,7 @@ void set_push_PCF_to_shiftreg()
 				if (bit_PCF_reg != 0)
 				{
 					// Проверяем нажатие кнопки и если есть связь со сдвиговым регистром, то инвертируем синганл
-					if (bit_PCF_reg == bitRead(array_count_reg[i][2], j))
+					if (bit_PCF_reg == bitRead(arr_shift_reg[i][2], j))
 					{
 						value_reg_shift = bitRead(array_shift_reg[i], j);
 						bitWrite(array_shift_reg[i], j, !value_reg_shift);
@@ -443,6 +417,8 @@ void set_push_PCF_to_shiftreg()
 			}
 		}
 	}
+
+
 
 	//устанавливаем отдельные регистры, которые не связаны с PCF
 	for (i = count_reg_PCF; i < count_reg_shift; i++)
@@ -559,16 +535,24 @@ void read_serial()
 }
 
 // получить значения регистров  0 - № PCF (array_name), 1 - № регистра PCF
-byte get_value_regs_PCF(byte num_array_name, byte num_reg)
+byte get_value_regs_PCF(byte num_array_name)
 {
 	switch (num_array_name) 
 	{
 		case 0:
-			return expander.readButton(num_reg);
+		{
+			Serial.print("A");
+			//return expander_20.readButton8(num_reg);
+			
+			return expander_21.read8();//expander_20.readButton8(num_reg);
 			break;
+		}
 		case 1:
-			return expander_2.readButton(num_reg);
+		{
+			Serial.print("B");
+			return expander_20.read8();//expander_21.readButton(num_reg);
 			break;
+		}
 		default:
 			return 0;
 	}
@@ -619,8 +603,8 @@ void serial_clear()
 	// Обнуляем регистры нажатых кнопок
 	for ( i = 0; i < count_reg_PCF; i++)
 	{
-		array_count_reg[i][0] = 0;
-		array_count_reg[i][1] = 0;
+		arr_shift_reg[i][0] = 0;
+		arr_shift_reg[i][1] = 0;
 	}
 
 	serial_num = 0;
@@ -642,3 +626,8 @@ void send_to_serial( byte topic, byte num, int value)
 	+ 'n' + String(num )
 	+ 'v' + String(value));
 }
+
+void read_set_pcf ()
+{
+	expander_21.read8();
+} 
